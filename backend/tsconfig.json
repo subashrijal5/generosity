@@ -18,6 +18,6 @@
     "types": ["vitest/globals"]
   },
   "extends": [],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "src/database/migrations/**",  "src/**/*.sql"],
   "include": ["src/**/*.ts", "drizzle.config.ts", "src/api/courses/__tests__/coursesRouter.test.ts"]
 }

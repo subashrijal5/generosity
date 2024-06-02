@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@vee-validate/nuxt",
     "@morev/vue-transitions/nuxt",
-    '@nuxt/test-utils/module'
+    "@nuxt/test-utils/module",
   ],
 
   tailwindcss: { exposeConfig: true },
@@ -34,7 +34,6 @@ export default defineNuxtConfig({
       title: "Generosity",
       titleTemplate: "%s - Generosity",
     },
-  
   },
   runtimeConfig: {
     public: {
@@ -43,7 +42,6 @@ export default defineNuxtConfig({
     },
   },
   experimental: {
-    asyncContext: true
-  }
-
+    asyncContext: true,
+  },
 });
