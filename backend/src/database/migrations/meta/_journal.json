@@ -1,0 +1,90 @@
+{
+  "version": "6",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1716527145615,
+      "tag": "0000_dizzy_gambit",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1716555844851,
+      "tag": "0001_quick_adam_warlock",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1716558025984,
+      "tag": "0002_omniscient_makkari",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1716694992823,
+      "tag": "0003_brief_the_stranger",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1716792512513,
+      "tag": "0004_charming_cobalt_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1716792626824,
+      "tag": "0005_late_romulus",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1716793275361,
+      "tag": "0006_lucky_photon",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1716793316629,
+      "tag": "0007_military_triathlon",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "6",
+      "when": 1716793341218,
+      "tag": "0008_purple_devos",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "6",
+      "when": 1716798000467,
+      "tag": "0009_cute_photon",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "6",
+      "when": 1716803326040,
+      "tag": "0010_cynical_purifiers",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "6",
+      "when": 1717277705614,
+      "tag": "0011_aspiring_lockjaw",
+      "breakpoints": true
+    }
+  ]
+}

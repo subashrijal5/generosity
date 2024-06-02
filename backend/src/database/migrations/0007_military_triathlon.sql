@@ -1,0 +1,1 @@
+ALTER TABLE "courses" ALTER COLUMN "lecture_days" DROP NOT NULL;
