@@ -8,7 +8,8 @@ export default defineEventHandler(async (event) => {
     const body = await readBody<TLoginForm>(event);
     const { email, password } = body;
     // Make the external API call
-    const response = await fetch(`${process.env.NUXT_PUBLIC_API_BASE_URL}/auth/login`, {
+
+    const response = await fetch(`${process.env.NUXT_PRIVATE_BACKEND_URL}/auth/login`, {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: {

@@ -13,13 +13,5 @@ RUN npm install
 # Copy the entire project
 COPY . .
 
-ENV HOST 0.0.0.0
-
-# # Build the TypeScript project
-RUN npm run build
-
-# Expose the port your Express.js app will run on
-EXPOSE 3000
-
 # Start the app
-CMD ["npm","run", "preview"]
+CMD ["npm","run", "dev"]

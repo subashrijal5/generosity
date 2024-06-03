@@ -8,7 +8,7 @@
     </slot>
     <slot name="description">
       <p class="mx-auto max-w-[800px] text-lg text-muted-foreground lg:text-xl">
-        {{ description }}
+        {{ description }} 
       </p>
     </slot>
     <div class="mt-5 flex w-full flex-col-reverse justify-center gap-3 md:w-auto md:flex-row">

@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base
-FROM node:latest
+FROM node:latest 
 
 # Set the working directory
 WORKDIR /app
@@ -13,7 +13,7 @@ RUN npm install
 # Copy the entire project
 COPY . .
 
-RUN npx drizzle-kit generate
+# RUN npx drizzle-kit generate
 
 # RUN npx drizzle-kit migrate
 

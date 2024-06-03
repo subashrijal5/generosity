@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
     }
 
     // Make the external API call
-    const response = await fetch(`${process.env.NUXT_PUBLIC_API_BASE_URL}/auth/refresh-token`, {
+    const response = await fetch(`${process.env.NUXT_PRIVATE_BACKEND_URL}/auth/refresh-token`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
