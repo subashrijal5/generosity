@@ -1,30 +1,19 @@
 <template>
-  <div>
-    <UiContainer as="section" class="max-w-4xl py-5">
-      <div class="flex items-center justify-between gap-5">
-        <div>
-          <h1 class="text-2xl font-semibold">Users</h1>
-          <p class="mt-1 text-muted-foreground">Manage users here</p>
-        </div>
-        <!-- <UiButton @click="loadData" size="sm">Load users</UiButton> -->
-      </div>
-      <UiDivider class="my-10" />
-    </UiContainer>
-  </div>
+  <UiContainer class="py-16 text-center lg:py-24">
+    <slot name="headline">
+      <p class="font-semibold text-primary">ようこそ</p>
+    </slot>
+
+    <slot name="description">
+      <p class="mx-auto max-w-[800px] text-lg text-muted-foreground lg:text-xl">
+        寛大大学です。ここでは、コースに登録することができます。また、授業のスケジュールを確認したり、講義状況を更新することもできます。
+      </p>
+    </slot>
+    <div class="mt-5 flex w-full flex-col-reverse justify-center gap-3 md:w-auto md:flex-row">
+      <slot>
+        <UiButton to="dashboard/courses" variant="outline">コース一覧</UiButton>
+        <UiButton to="/dashboard/timetable">タイムテーブルを見る</UiButton>
+      </slot>
+    </div>
+  </UiContainer>
 </template>
-
-<script lang="ts" setup>
-  const { user } = useAuth();
-
-  const headers = ["ID", "Name", "Email"];
-
-  useHead({
-    title: "Users",
-    meta: [
-      {
-        name: "description",
-        content: "Manage users here",
-      },
-    ],
-  });
-</script>

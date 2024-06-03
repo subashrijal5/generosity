@@ -1,8 +1,8 @@
 <template>
   <UiContainer>
     <div class="w-full py-5">
-      <h1 class="text-2xl font-bold tracking-tight lg:text-3xl">Available Class List</h1>
-      <p class="mt-1 text-muted-foreground">Here you can see list of available classes.</p>
+      <h1 class="text-2xl font-bold tracking-tight lg:text-3xl">受講可能クラス一覧</h1>
+      <p class="mt-1 text-muted-foreground">ここでは、利用可能なクラスのリストを見ることができます。</p>
       <UiDivider class="mb-8"></UiDivider>
       <div class="flex flex-wrap gap-4">
         <PartialCourseCard

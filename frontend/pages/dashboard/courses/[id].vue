@@ -8,7 +8,7 @@
             {{ course?.description }}
           </p>
         </div>
-        <div class="flex gap-2">
+        <div class="flex gap-2 min-w-72">
           <UiButton
             variant="default"
             @click="handleMarkCompleted(course?.id!)"
@@ -17,17 +17,17 @@
             v-if="enrollmentStatus === EnrollmentStatus.enrolled"
           >
             <Icon name="lucide:check-circle" class="h-5 w-5" />
-            Completed
+            完成
           </UiButton>
           <PartialEnrollLeave :status="enrollmentStatus" @click="handleEnroll"></PartialEnrollLeave>
-          <UiButton @click="router.back()" variant="ghost">Back</UiButton>
+          <UiButton  class="w-full" @click="router.back()" variant="ghost">戻る</UiButton>
         </div>
       </div>
       <UiDivider />
       <div class="grid gap-8 md:grid-cols-2">
         <div class="grid gap-4">
           <div class="grid gap-1">
-            <UiLabel class="text-gray-500 dark:text-gray-400">Instructor</UiLabel>
+            <UiLabel class="text-gray-500 dark:text-gray-400">講師</UiLabel>
             <div class="flex items-center gap-4">
               <span class="relative flex h-12 w-12 shrink-0 overflow-hidden rounded-full border">
                 <Icon name="lucide:user" class="aspect-square h-full w-full" />
@@ -42,40 +42,40 @@
             </div>
           </div>
           <div class="grid gap-1">
-            <UiLabel class="text-gray-500 dark:text-gray-400">Course Details</UiLabel>
+            <UiLabel class="text-gray-500 dark:text-gray-400">コース詳細</UiLabel>
             <div class="grid gap-2 text-sm">
               <div class="flex justify-between">
-                <div>Semester</div>
+                <div>学期</div>
                 <UiBadge class="capitalize">{{ course?.semester }}</UiBadge>
               </div>
               <div class="flex justify-between">
-                <div>Timeslot</div>
+                <div>タイムスロット</div>
                 <div>{{ course?.timeslot }}</div>
               </div>
               <div class="flex justify-between">
-                <div>Credits</div>
+                <div>クレジット</div>
                 <UiBadge class="bg-green-500">{{ course?.credits }}</UiBadge>
               </div>
               <div class="flex justify-between">
-                <div>Created</div>
+                <div>作成</div>
                 <div>{{ formatDate(course?.createdAt!) }}</div>
               </div>
               <div
                 class="flex justify-between"
                 v-if="enrollmentStatus !== EnrollmentStatus.pending"
               >
-                <div>Enrolled On</div>
+                <div>在籍日</div>
                 <div>{{ formatDate(enrollment?.enrolledAt!) }}</div>
               </div>
               <div
                 class="flex justify-between"
                 v-if="enrollmentStatus === EnrollmentStatus.completed"
               >
-                <div>Completed On</div>
+                <div>完了</div>
                 <div>{{ formatDate(enrollment?.completedAt!) }}</div>
               </div>
               <div class="flex justify-between">
-                <div>Status</div>
+                <div>ステータス</div>
 
                 <UiBadge :class="enrollmentStatusStyles[enrollmentStatus]">
                   {{ enrollmentStatus }}
@@ -87,7 +87,7 @@
         <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
           <div class="flex flex-col space-y-1.5 p-6">
             <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">
-              Instructor Bio
+              講師略歴
             </h3>
           </div>
           <div class="p-6 text-sm">
@@ -103,7 +103,7 @@
           <UiCollapsibleTrigger
             className="flex items-center justify-between w-full bg-gray-100 dark:bg-gray-800 px-4 py-3 rounded-md font-medium [&[data-state=open]>svg]:rotate-90"
           >
-            <div>Lectures</div>
+            <div>講義</div>
             <Icon name="lucide:chevron-right" className="w-7 h-7 transition-transform" />
           </UiCollapsibleTrigger>
           <UiCollapsibleContent className="px-4 py-6 grid gap-4">

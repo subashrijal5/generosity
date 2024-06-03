@@ -1,7 +1,7 @@
 <template>
   <UiContainer class="py-16 text-center lg:py-24">
     <slot name="headline">
-      <p class="font-semibold text-primary">Welcome</p>
+      <p class="font-semibold text-primary">ようこそ</p>
     </slot>
     <slot name="title">
       <h2 class="mb-4 mt-2 text-4xl font-bold lg:mb-6 lg:mt-3 lg:text-5xl">{{ title }}</h2>
@@ -13,22 +13,20 @@
     </slot>
     <div class="mt-5 flex w-full flex-col-reverse justify-center gap-3 md:w-auto md:flex-row">
       <slot>
-        <UiButton to="dashboard/courses" variant="outline">Check Courses List</UiButton>
-        <UiButton to="/dashboard/timetable">View Timetable</UiButton>
+        <UiButton to="dashboard/courses" variant="outline">コース一覧</UiButton>
+        <UiButton to="/dashboard/timetable">タイムテーブルを見る</UiButton>
       </slot>
     </div>
   </UiContainer>
 </template>
 
 <script lang="ts" setup>
-  import Card from "~/components/Ui/Card/Card.vue";
-
   definePageMeta({
     layout: "dashboard",
   });
 
   const { user } = useAuth();
-  const title = `Welcome ${user.value?.name}`;
+  const title = `ようこそ ${user.value?.name}`;
   const description =
-    "This is Generosity university. Here you can enroll to courses. You can check the class schedule also you can update your lecture status.";
+    "寛大大学です。ここでは、コースに登録することができます。また、授業のスケジュールを確認したり、講義状況を更新することもできます。";
 </script>
