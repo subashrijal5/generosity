@@ -7,9 +7,8 @@ export default defineEventHandler(async (event) => {
   try {
     const body = await readBody<TLoginForm>(event);
     const { email, password } = body;
-
     // Make the external API call
-    const response = await fetch(`${process.env.API_BASE_URL}/auth/login`, {
+    const response = await fetch(`${process.env.NUXT_PUBLIC_API_BASE_URL}/auth/login`, {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: {
@@ -19,9 +18,8 @@ export default defineEventHandler(async (event) => {
     });
 
     // Log the response status
-    console.log("Response status:", response.status);
+    console.log("Response status:", response);
     const jsonResponse = (await response.json()) as THttpResponse<TUser>;
-
     // Check if the response is OK
     if (!response.ok) {
       throw createError({
@@ -32,7 +30,6 @@ export default defineEventHandler(async (event) => {
 
     // Parse the response JSON
     const user = jsonResponse.responseObject;
-
     // Log the received user data
     console.log("Received user:", user);
 
@@ -41,12 +38,12 @@ export default defineEventHandler(async (event) => {
       throw createError({ statusCode: 401, statusMessage: "Invalid credentials" });
     }
 
-     setCookie(event, UserCookieKey, JSON.stringify(user), {
+    setCookie(event, UserCookieKey, JSON.stringify(user), {
       // httpOnly: process.env.NODE_ENV === 'production',
-      maxAge:  user.maxAge,
+      maxAge: user.maxAge,
       // secure: process.env.NODE_ENV === 'production',
       // sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax",
-     })
+    });
 
     return true;
   } catch (error) {

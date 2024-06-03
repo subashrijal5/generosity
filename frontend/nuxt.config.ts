@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   ssr: true,
-  devtools: { enabled: true },
+  devtools: { enabled: process.env.NODE_ENV !== "production" },
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
@@ -37,7 +37,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBaseUrl: process.env.API_BASE_URL,
+      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL ?? "https://generosity-be.subashrijal.com.np",
       NODE_ENV: process.env.NODE_ENV,
     },
   },
